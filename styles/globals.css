@@ -32,9 +32,11 @@ a {
 	--black: #3B434E;
 	--white: white;
 	--primary: #7653FC;
+	--primary-hover: #4115f3;
 	--red: #FC836D;
 	--green: #1DC47E;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans", sans-serif;
 	--background: #E5E5E5;
+	--grey-light: #EBEBEB;
 }
