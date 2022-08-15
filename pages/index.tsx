@@ -1,12 +1,10 @@
-import { Button, Htag, Paragraph } from "../components"
+import { Button, Htag, Paragraph, Tags } from "../components"
 
 export default function Home() {
   return (
     <div>
       <Htag tag="h1">index page</Htag>
-      <Button appearance="primary" arrow="right">
-        test button
-      </Button>
+      <Button appearance="primary">test button</Button>
       <Button appearance="ghost" arrow="down">
         test button
       </Button>
@@ -15,6 +13,13 @@ export default function Home() {
         esse asperiores architecto dolore quasi quae praesentium velit quis, ex,
         nisi modi cumque numquam sequi, natus harum incidunt impedit nemo!
       </Paragraph>
+      <Tags size="s">small</Tags>
+      <Tags size="m">medium</Tags>
+      <Tags color="red">color red</Tags>
+      <Tags color="green">color green</Tags>
+      <Tags color="primary" href="www.google.com">
+        link to google
+      </Tags>
     </div>
   )
 }
