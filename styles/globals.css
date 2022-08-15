@@ -9,6 +9,11 @@ body {
 	font-family: "Noto Sans", sans-serif;
 }
 
+p {
+	margin: 0;
+	padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -32,7 +37,7 @@ a {
 	--black: #3B434E;
 	--white: white;
 	--primary: #7653FC;
-	--primary-hover: #4115f3;
+	--primary-hover: #4115F3;
 	--red: #FC836D;
 	--green: #1DC47E;
 	--green-light: #C8F8E4;
