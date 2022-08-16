@@ -31,7 +31,7 @@ export const Rating = ({
     setRating(i)
   }
 
-  const handleSpace = (i: number, e: KeyboardEvent<Div>) => {
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
     if (e.code !== "Space" || !setRating) {
       return
     }
