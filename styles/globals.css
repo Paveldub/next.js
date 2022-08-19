@@ -45,3 +45,12 @@ a {
 	--background: #E5E5E5;
 	--grey-light: #EBEBEB;
 }
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style-type: none;
+}
