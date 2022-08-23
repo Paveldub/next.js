@@ -24,6 +24,14 @@
     border-left: 1px solid #Dfdfdf;
 }
 
+.secondLevelBlock {
+    display: none;
+}
+
+.secondLevelBlockOpend {
+    display: block;
+}
+
 .secondLevelBlockOpend:last-child {
     margin-bottom: 20px;
 }
@@ -36,6 +44,10 @@
     font-weight: 300;
     font-size: 12px;
     line-height: 16px;
+}
+
+.secondLevel:hover {
+    color: var(--primary)
 }
 
 .thirdLevel {
