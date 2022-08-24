@@ -63,3 +63,7 @@
 .thirdLevelActive, .thirdLevel:hover  {
     color: var(--primary)
 }
+
+.logo {
+    margin-top: 10px;
+}
