@@ -1,5 +1,5 @@
 export const priceRu = (price: number): string => {
-  return new Intl.NumberFormat("ru-RU", {
+  return new Intl.NumberFormat("ru-Ru", {
     style: "currency",
     currency: "RUB",
     currencyDisplay: "symbol",
