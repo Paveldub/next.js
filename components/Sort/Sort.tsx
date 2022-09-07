@@ -28,7 +28,7 @@ export const Sort = ({
           <rect y="5" width="14" height="3" rx="1.5" fill="#7653FC" />
           <rect y="10" width="8" height="3" rx="1.5" fill="#7653FC" />
         </svg>
-        По рейтингу
+        По&nbsp;рейтингу
       </span>
       <span
         onClick={() => setSort(SortEnum.Price)}

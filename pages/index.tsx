@@ -1,9 +1,18 @@
 import { GetStaticProps } from "next"
 import { useState } from "react"
-import { Button, Htag, Paragraph, Rating, Tags } from "../components"
+import {
+  Button,
+  Htag,
+  Input,
+  Paragraph,
+  Rating,
+  Search,
+  Tags,
+} from "../components"
 import { withLayout } from "../layout/Layout"
 import axios from "axios"
 import { MenuItem } from "../interfaces/menu.interface"
+import { TextArea } from "../components/TextArea/TextArea"
 
 function Home({ menu }: HomeProps) {
   const [rating, setRating] = useState<number>(4)
@@ -29,6 +38,8 @@ function Home({ menu }: HomeProps) {
       </Tags>
       <div>-------</div>
       <Rating rating={rating} isEditable={true} setRating={setRating} />
+      <Input placeholder="Имя" />
+      <TextArea placeholder="text" />
     </div>
   )
 }

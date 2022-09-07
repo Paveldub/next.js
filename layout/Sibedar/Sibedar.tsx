@@ -3,6 +3,7 @@ import cn from "classnames"
 import { SidebarProps } from "./Sibedar.props"
 import { Menu } from "../Menu/Menu"
 import Link from "next/link"
+import { Input, Search } from "../../components"
 
 export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
   return (
@@ -43,10 +44,7 @@ export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
           </a>
         </Link>
 
-        <div>
-          <label htmlFor="search"></label>
-          <input type="text" name="search" id="search" />
-        </div>
+        <Search />
         <Menu />
       </div>
     </>
