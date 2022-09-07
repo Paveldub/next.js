@@ -1,10 +1,10 @@
 import styles from "./TopPage.module.css"
 import { TopPageComponentProps } from "./TopPageComponent.props"
 
-import { HhData, Htag, Tags } from "../../components"
-import { Card } from "../../components/Card/Card"
+import { HhData, Htag, Sort, Tags } from "../../components"
 import { TopLevelCategory } from "../../interfaces/page.interface"
 import { Advantages } from "../../components/Advantages/Advantages"
+import { SortEnum } from "../../components/Sort/Sort.props"
 
 export const TopPageComponent = ({
   firstCategory,
@@ -19,7 +19,7 @@ export const TopPageComponent = ({
         <Tags size="m" color="grey">
           {products && products.length}
         </Tags>
-        <span>Сортировка</span>
+        <Sort sort={SortEnum.Rating} setSort={() => SortEnum.Rating} />
       </div>
       <div>
         {products &&
