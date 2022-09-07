@@ -4,12 +4,14 @@ import { TopPageComponentProps } from "./TopPageComponent.props"
 import { HhData, Htag, Tags } from "../../components"
 import { Card } from "../../components/Card/Card"
 import { TopLevelCategory } from "../../interfaces/page.interface"
+import { Advantages } from "../../components/Advantages/Advantages"
 
 export const TopPageComponent = ({
   firstCategory,
   page,
   products,
 }: TopPageComponentProps): JSX.Element => {
+  console.log(page.tags)
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -30,7 +32,23 @@ export const TopPageComponent = ({
         </Tags>
       </div>
 
-      {firstCategory === TopLevelCategory.Courses && <HhData {...page.hh} />}
+      {firstCategory === TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag="h2">Преимущества</Htag>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
+      <div className={styles.tagStyle}>
+        {page?.tags.map((item) => (
+          <Tags key={item} color="primary">
+            {item}
+          </Tags>
+        ))}
+      </div>
     </div>
   )
 }

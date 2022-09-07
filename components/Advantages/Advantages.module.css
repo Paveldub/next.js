@@ -1,0 +1,16 @@
+.advantages {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.advantage {
+	align-items: center;
+	display: flex;
+}
+
+.advantage svg {
+	margin-right: 20px;
+}

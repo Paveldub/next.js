@@ -17,3 +17,7 @@
     justify-items: baseline;
     gap: 20px;
 }
+
+.tagStyle {
+    margin-bottom: 30px;
+}
