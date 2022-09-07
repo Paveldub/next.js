@@ -42,6 +42,14 @@ export const TopPageComponent = ({
           <Advantages advantages={page.advantages} />
         </>
       )}
+
+      {page.seoText && (
+        <div
+          className={styles.seoText}
+          dangerouslySetInnerHTML={{ __html: page.seoText }}
+        />
+      )}
+
       <div className={styles.tagStyle}>
         {page?.tags.map((item) => (
           <Tags key={item} color="primary">
