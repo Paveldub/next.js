@@ -2,6 +2,11 @@
 	display: grid;
 	grid-template-columns: [start] 70px [logoend] 30px [titleStart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
 	margin-bottom: 30px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	padding: 30px;
+	margin-top: 10px;
 }
 
 .logo {
@@ -28,6 +33,7 @@
 .description {
 	display: grid;
 	grid-template-columns: start / end;
+	margin-bottom: 10px;
 }
 
 .hr, .description {
@@ -44,4 +50,74 @@
 
 .actions {
 	grid-column: start / middle;
+}
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title span {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+	color: #3B434E;
+}
+
+.price .credit {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 27px;
+	color: #3B434E;
+}
+
+.rating {
+	align-self: flex-end;
+}
+
+.priceTitle, .rateTitle, .creditTitle {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 19px;
+	color: #3B434E;
+}
+
+.margin {
+	margin-left: 5px;
+}
+
+.characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	padding-right: 60px;
+}
+
+.characteristicsName {
+	margin-right: 10px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 32px;
+	color: #3B434E;
+}
+
+.characteristicsDots {
+	border-bottom: 1px dashed var(--grey-light);
+	margin-bottom: 9px;
+}
+
+.characteristicsValue {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: right;
+	color: #3B434E;
+}
+
+.buttonMargin {
+	margin-right: 20px;
 }

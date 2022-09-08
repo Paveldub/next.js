@@ -4,13 +4,11 @@ import { Card } from "../Card/Card"
 import { Tags } from "../Tags/Tags"
 import { Rating } from "../Rating/Rating"
 import { Button } from "../Button/Button"
+import { priceRu } from "../../helpers/currencyHelper"
+import { Divider } from "../Divider/Divider"
+import { declinationOfNumber } from "../../helpers/declinationHelper"
 
-export const Product = ({
-  product,
-  className,
-  ...props
-}: ProductProps): JSX.Element => {
-  console.log(product)
+export const Product = ({ product }: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
@@ -24,9 +22,14 @@ export const Product = ({
       </div>
       <div className={styles.price}>
         <span>{product.price}</span>
+        {product.oldPrice && (
+          <Tags color="green" className={styles.margin}>
+            {priceRu(product.price - product.oldPrice)}
+          </Tags>
+        )}
       </div>
       <div className={styles.credit}>
-        <span>{product.credit}</span>
+        <span>{priceRu(product.credit)}/мес</span>
       </div>
       <div className={styles.rating}>
         <Rating rating={product.reviewAvg ?? product.initialRating} />
@@ -45,32 +48,45 @@ export const Product = ({
         <span>в кредит</span>
       </div>
       <div className={styles.rateTitle}>
-        <span>{product.reviewCount} отзывов</span>
+        <span>
+          {product.reviewCount}&ensp;
+          {declinationOfNumber(product.reviewCount, [
+            "отзыв",
+            "отзыва",
+            "отзывов",
+          ])}
+        </span>
       </div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.description}>
         <p>{product.description}</p>
       </div>
       <div className={styles.features}>
-        <p>фичи</p>
+        {product.characteristics.map((item) => (
+          <div className={styles.characteristics} key={item.name}>
+            <span className={styles.characteristicsName}>{item.name}</span>
+            <span className={styles.characteristicsDots}></span>
+            <span className={styles.characteristicsValue}>{item.value}</span>
+          </div>
+        ))}
       </div>
       <div className={styles.advBlock}>
         <div className={styles.advantages}>
           <div>Преимущества</div>
           <div>{product.advantages}</div>
         </div>
-        <div className={styles.disadvantages}>
-          <div>Недостатки</div>
-          <div>{product.disadvantages && product.disadvantages}</div>
-        </div>
+        {product.disadvantages && (
+          <div className={styles.disadvantages}>
+            <div>Недостатки</div>
+            <div>{product.disadvantages}</div>
+          </div>
+        )}
       </div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.actions}>
-        <Button appearance="primary">Узнать подробнее</Button>
+        <Button appearance="primary" className={styles.buttonMargin}>
+          Узнать подробнее
+        </Button>
         <Button appearance="ghost" arrow="right">
           Узнать подробнее
         </Button>
